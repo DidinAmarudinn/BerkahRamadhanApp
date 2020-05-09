@@ -4,10 +4,11 @@
     <color name="colorPrimaryDark">#273253</color>
     <color name="redAccent">#ed5c4d</color>
     <color name="colorAccent">#FFFF</color>
-    <color name="backgroundColor">#fdfdfd</color>
+    <color name="backgroundColor">#e5e8f0</color>
     <color name="yellowAccent">#fbbe4b</color>
     <color name="blueSky">#57b5ed</color>
     <color name="textWhite">#FFFF</color>
+    <color name="shimerbg">#dddddd</color>
     <color name="textBlack">#000000</color>
     <color name="mtrl_textinput_default_box_stroke_color"  tools:override="true">#fbbe4b</color>
     <color name="birufacebook">#3b5998</color>

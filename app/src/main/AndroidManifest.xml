@@ -2,24 +2,26 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.loginwithgoogle">
 
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".Menu.CariMesjid"></activity>
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".Menu.adzan.AdzanAct"></activity>
+        <activity android:name=".Menu.CariMesjid" />
         <activity android:name=".Menu.news.NewsAct" />
-        <activity android:name=".Menu.AlQuran" />
-        <activity android:name=".Menu.kiblat.KiblatAct" android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity android:name=".Menu.AlQuran.AlQuran" />
+        <activity
+            android:name=".Menu.kiblat.KiblatAct"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
         <activity android:name=".Home.DashboardAct" />
         <activity android:name=".Splash.RegistAct" />
         <activity android:name=".Splash.LoginAct" />

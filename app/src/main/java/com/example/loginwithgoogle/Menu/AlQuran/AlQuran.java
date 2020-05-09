@@ -1,4 +1,4 @@
-package com.example.loginwithgoogle.Menu;
+package com.example.loginwithgoogle.Menu.AlQuran;
 
 import androidx.appcompat.app.AppCompatActivity;
 

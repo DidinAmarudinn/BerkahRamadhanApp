@@ -1,9 +1,14 @@
 package com.example.loginwithgoogle.Menu.news.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
-public class ResponseBerita{
+public class ResponseBerita extends BeritaItem {
+	@SerializedName("berita")
 	private List<BeritaItem> berita;
+
+	@SerializedName("status")
 	private boolean status;
 
 	public void setBerita(List<BeritaItem> berita){
@@ -23,11 +28,11 @@ public class ResponseBerita{
 	}
 
 	@Override
- 	public String toString(){
-		return 
-			"ResponseBerita{" + 
-			"berita = '" + berita + '\'' + 
-			",status = '" + status + '\'' + 
-			"}";
-		}
+	public String toString(){
+		return
+				"ResponseBerita{" +
+						"berita = '" + berita + '\'' +
+						",status = '" + status + '\'' +
+						"}";
+	}
 }

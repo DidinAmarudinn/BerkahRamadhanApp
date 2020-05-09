@@ -7,29 +7,27 @@
     android:background="@color/backgroundColor"
     tools:context=".Menu.news.NewsAct">
 
-    <TextView
-        android:id="@+id/textView7"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_12sdp"
-        android:fontFamily="@font/opensansbold"
-        android:gravity="center"
-        android:text="Berita Terbaru"
-        android:textColor="@color/textBlack"
-        android:textSize="@dimen/_18sdp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center_horizontal" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_berita"
-        android:layout_marginTop="@dimen/_8sdp"
-        android:layout_marginLeft="@dimen/_8sdp"
-        android:layout_marginRight="@dimen/_8sdp"
-        android:layout_marginBottom="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_6sdp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        android:layout_marginLeft="@dimen/_8sdp"
+        android:layout_marginRight="@dimen/_8sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_goneMarginTop="@dimen/_50sdp"
         tools:listitem="@layout/list_berita" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

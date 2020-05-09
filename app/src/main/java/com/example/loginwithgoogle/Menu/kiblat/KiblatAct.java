@@ -24,6 +24,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.loginwithgoogle.DatabaseLocal.Helper;
 import com.example.loginwithgoogle.R;
 
 public class KiblatAct extends AppCompatActivity{
@@ -37,6 +38,7 @@ public class KiblatAct extends AppCompatActivity{
         public Menu menu;
         public MenuItem item;
         private float currentAzimuth;
+        Helper helper;
         SharedPreferences prefs;
         public LocationManager locationManager;
         GPSTracker gps;
@@ -44,19 +46,15 @@ public class KiblatAct extends AppCompatActivity{
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_kiblat);
-            //////////////////////////////////////////
-
-            //////////////////////////////////////////
+            helper=new Helper(this);
             prefs = getSharedPreferences("", MODE_PRIVATE);
             gps = new GPSTracker(this);
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-            //////////////////////////////////////////
             arrowViewQiblat = (ImageView) findViewById(R.id.main_image_qiblat);
             imageDial = (ImageView) findViewById(R.id.main_image_dial);
             text_atas = (TextView) findViewById(R.id.teks_atas);
             text_bawah = (TextView) findViewById(R.id.teks_bawah);
 
-            //////////////////////////////////////////
             arrowViewQiblat .setVisibility(View.INVISIBLE);
             arrowViewQiblat .setVisibility(View.GONE);
 
@@ -116,8 +114,6 @@ public class KiblatAct extends AppCompatActivity{
                 }
             }
 
-
-
             compass = new Compass(this);
             Compass.CompassListener cl = new Compass.CompassListener() {
 
@@ -134,7 +130,6 @@ public class KiblatAct extends AppCompatActivity{
 
         public void adjustGambarDial(float azimuth) {
             // Log.d(TAG, "will set rotation from " + currentAzimuth + " to "                + azimuth);
-
             Animation an = new RotateAnimation(-currentAzimuth, -azimuth,
                     Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF,
                     0.5f);
@@ -167,7 +162,6 @@ public class KiblatAct extends AppCompatActivity{
         @SuppressLint("MissingPermission")
         public void getBearing(){
             // Get the location manager
-
             float kiblat_derajat = GetFloat("kiblat_derajat");
             if(kiblat_derajat > 0.0001){
                 text_bawah.setText(getResources().getString(R.string.your_location) +" "+ getResources().getString(R.string.using_last_location));
@@ -181,12 +175,7 @@ public class KiblatAct extends AppCompatActivity{
             {
                 fetch_GPS();
             }
-
-
         }
-
-
-
 
         @Override
         public void onRequestPermissionsResult(int requestCode,
@@ -202,9 +191,7 @@ public class KiblatAct extends AppCompatActivity{
                         text_bawah.setText(getResources().getString(R.string.msg_permission_granted));
                         arrowViewQiblat .setVisibility(View.INVISIBLE);
                         arrowViewQiblat .setVisibility(View.GONE);
-
                     } else {
-
                         Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_permission_required), Toast.LENGTH_LONG).show();
                         finish();
                     }
@@ -258,7 +245,7 @@ public class KiblatAct extends AppCompatActivity{
         @Override
         public boolean onCreateOptionsMenu(Menu menu) {
             MenuInflater inflater = getMenuInflater();
-            // this.menu = menu;
+            // ;this.menu = menu;
             // menu.getItem(0). setIcon(ContextCompat.getDrawable(getApplicationContext(), R.drawable.gps_off));
             // getMenuInflater().inflate(R.menu.gps, menu);
             // MenuItem item = menu.findItem(R.id.gps);
@@ -281,14 +268,13 @@ public class KiblatAct extends AppCompatActivity{
         }
 
         public void fetch_GPS(){
-
-
-
             double result = 0;
             gps = new GPSTracker(this);
             if(gps.isCanGetLocation()){
                 double latitude = gps.getLatitude();
                 double longitude = gps.getLongtitude();
+                helper.putLat(latitude);
+                helper.putLang(longitude);
                 // \n is for new line
                 text_bawah.setText(getResources().getString(R.string.your_location) + "\nLat: " + latitude + " Long: " + longitude);
                 // Toast.makeText(getApplicationContext(), "Lokasi anda: - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();

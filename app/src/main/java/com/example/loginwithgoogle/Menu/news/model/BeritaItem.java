@@ -1,11 +1,24 @@
 package com.example.loginwithgoogle.Menu.news.model;
 
+import com.google.gson.annotations.SerializedName;
+
 public class BeritaItem{
+	@SerializedName("penulis")
 	private String penulis;
+
+	@SerializedName("foto")
 	private String foto;
+
+	@SerializedName("id")
 	private String id;
+
+	@SerializedName("judul_berita")
 	private String judulBerita;
+
+	@SerializedName("tanggal_posting")
 	private String tanggalPosting;
+
+	@SerializedName("isi_berita")
 	private String isiBerita;
 
 	public void setPenulis(String penulis){
@@ -57,15 +70,16 @@ public class BeritaItem{
 	}
 
 	@Override
- 	public String toString(){
-		return 
-			"BeritaItem{" + 
-			"penulis = '" + penulis + '\'' + 
-			",foto = '" + foto + '\'' + 
-			",id = '" + id + '\'' + 
-			",judul_berita = '" + judulBerita + '\'' + 
-			",tanggal_posting = '" + tanggalPosting + '\'' + 
-			",isi_berita = '" + isiBerita + '\'' + 
-			"}";
-		}
+	public String toString(){
+		return
+				"BeritaItem{" +
+						"penulis = '" + penulis + '\'' +
+						",foto = '" + foto + '\'' +
+						",id = '" + id + '\'' +
+						",judul_berita = '" + judulBerita + '\'' +
+						",tanggal_posting = '" + tanggalPosting + '\'' +
+						",isi_berita = '" + isiBerita + '\'' +
+						"}";
+	}
+
 }

@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.loginwithgoogle.Home.Favorite.FavoriteFragment;
 import com.example.loginwithgoogle.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -33,6 +34,10 @@ public class DashboardAct extends AppCompatActivity implements BottomNavigationV
         switch (menuItem.getItemId()){
             case R.id.home_menu:
                 fragment=new HomeFragment();
+                break;
+            case R.id.favorite_menu:
+                fragment=new FavoriteFragment();
+                break;
         }
         return lodaFragment(fragment);
     }
