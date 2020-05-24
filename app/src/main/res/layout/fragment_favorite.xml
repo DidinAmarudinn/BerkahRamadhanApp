@@ -6,11 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".Home.Favorite.FavoriteFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:id="@+id/rv_favorite"
         tools:listitem="@layout/list_favorite"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/empety"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_200sdp"
+        android:src="@drawable/empety"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/rv_favorite"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.437" />
+    <TextView
+        android:id="@+id/tv_empety"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/opensanssemibold"
+        android:text="No Favorite Feeds"
+        android:visibility="gone"
+        android:gravity="center"
+        android:textColor="@color/textBlack"
+        android:textSize="@dimen/_15sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/empety" />
 </androidx.constraintlayout.widget.ConstraintLayout>

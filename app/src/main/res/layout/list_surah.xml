@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_marginBottom="@dimen/_4sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="@dimen/_37sdp"
+                android:layout_height="@dimen/_37sdp"
+                android:background="@drawable/bg_list_surah">
+
+                <TextView
+                    android:id="@+id/tv_number_surah"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="1"
+                    android:fontFamily="@font/opensanssemibold"
+                    android:textColor="@color/textWhite"
+                    android:textSize="@dimen/_12sdp"/>
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/_14sdp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_weight="1"
+                    android:fontFamily="@font/opensanssemibold"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/yellowAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Al-Fatiha"
+                    android:id="@+id/tv_nama_surah"
+                    />
+                <TextView
+                    android:id="@+id/tv_translate"
+                    android:layout_weight="1"
+                    android:text="The Opening (7 ayat)"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/_10sdp"
+                    android:fontFamily="@font/opensanslight"
+                    />
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:text="Al-baqara"
+                    android:id="@+id/tv_name_arab"
+                    android:gravity="right"
+                    android:fontFamily="@font/oprensanreguler"
+                    android:textColor="@color/textBlack"
+                    android:textSize="@dimen/_12sdp"
+                    android:layout_alignParentRight="true"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@color/shimerbg"
+            />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

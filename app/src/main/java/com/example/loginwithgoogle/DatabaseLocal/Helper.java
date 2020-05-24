@@ -8,7 +8,9 @@ public class Helper {
     private final String INTRO = "intro";
     private final String LATITUDE = "latitude";
     private final String LONGTITUDE = "longtitude";
+    private final String AUDIO_LINK="audio";
     private final String CITY="city";
+    private final String NUMBER_AYAT="ayat";
     private SharedPreferences preferences;
     private Context context;
 
@@ -53,5 +55,22 @@ public class Helper {
         edit.commit();
     }
     public String getCityy(){return preferences.getString(CITY,"");}
+
+    public void putAudio(String loginourout){
+        SharedPreferences.Editor editor=preferences.edit();
+        editor.putString(AUDIO_LINK,loginourout);
+        editor.commit();
+    }
+    public String getAUDIO_LINK(){
+        return preferences.getString(AUDIO_LINK,"");
+    }
+    public void putAyat(String loginourout){
+        SharedPreferences.Editor editor=preferences.edit();
+        editor.putString(NUMBER_AYAT,loginourout);
+        editor.commit();
+    }
+    public String getNUMBER_AYAT(){
+        return preferences.getString(NUMBER_AYAT,"");
+    }
 
 }

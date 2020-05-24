@@ -1,11 +1,9 @@
 package com.example.loginwithgoogle.Menu.feeds;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -15,12 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.loginwithgoogle.DatabaseLocal.FavoriteList;
-import com.example.loginwithgoogle.Home.Favorite.FavoriteFragment;
 import com.example.loginwithgoogle.Home.HomeFragment;
 import com.example.loginwithgoogle.Menu.feeds.model.FeedsItem;
-import com.example.loginwithgoogle.Menu.news.model.BeritaItem;
 import com.example.loginwithgoogle.R;
-import com.example.loginwithgoogle.Splash.MainActivity;
 import com.facebook.shimmer.ShimmerFrameLayout;
 
 import java.util.List;

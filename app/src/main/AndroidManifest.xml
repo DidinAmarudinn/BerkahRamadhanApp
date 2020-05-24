@@ -15,8 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Menu.adzan.AdzanAct"></activity>
-        <activity android:name=".Menu.CariMesjid" />
+        <activity android:name=".Menu.AlQuran.DetailSurah"></activity>
+        <activity android:name=".Menu.news.coronainfo.Corona_Info" />
+        <activity android:name=".Menu.Doas.DoaAct" />
+        <activity android:name=".Menu.news.Detail_News" />
+        <activity android:name=".Menu.adzan.AdzanAct" />
+        <activity android:name=".Menu.CariMesjid.CariMesjid" />
         <activity android:name=".Menu.news.NewsAct" />
         <activity android:name=".Menu.AlQuran.AlQuran" />
         <activity

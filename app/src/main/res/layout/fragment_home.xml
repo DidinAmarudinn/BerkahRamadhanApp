@@ -135,6 +135,7 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/quran_menu"
                 android:outlineSpotShadowColor="@color/textBlack"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_50sdp"

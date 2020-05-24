@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
     tools:context=".Menu.news.NewsAct">
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -16,18 +15,74 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:gravity="center_horizontal" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_berita"
-        android:layout_marginTop="@dimen/_6sdp"
+    <com.smarteist.autoimageslider.SliderView
+        android:id="@+id/imageSlider"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/_8sdp"
-        android:layout_marginRight="@dimen/_8sdp"
+        android:layout_height="@dimen/_200sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_goneMarginTop="@dimen/_50sdp"
-        tools:listitem="@layout/list_berita" />
+        app:sliderAnimationDuration="600"
+        app:sliderAutoCycleDirection="back_and_forth"
+        app:sliderAutoCycleEnabled="true"
+        app:sliderIndicatorAnimationDuration="600"
+        app:sliderIndicatorGravity="center_horizontal|bottom"
+        app:sliderIndicatorMargin="15dp"
+        app:sliderIndicatorOrientation="horizontal"
+        app:sliderIndicatorPadding="3dp"
+        app:sliderIndicatorRadius="2dp"
+        app:sliderIndicatorSelectedColor="#5A5A5A"
+        app:sliderIndicatorUnselectedColor="#FFF"
+        app:sliderScrollTimeInSec="1"
+        app:sliderStartAutoCycle="true" />
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_info"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_margin="@dimen/_12sdp"
+        app:layout_constraintTop_toBottomOf="@+id/imageSlider" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_20sdp"
+                >
+                <ImageView
+                    android:id="@+id/btn_close_info"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:src="@drawable/ic_close_black_24dp"/>
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/tv_corona_info"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Ayo Ikuti Perkembangan Kasus Covid-19 disini"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="#09AD95"
+                android:layout_marginBottom="@dimen/_12sdp"
+                android:fontFamily="@font/oprensanreguler"
+                android:gravity="center"
+                />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_berita"
+        android:layout_width="match_parent"
+        android:layout_marginRight="@dimen/_12sdp"
+        android:layout_marginLeft="@dimen/_12sdp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="@dimen/_24sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_info"
+        tools:listitem="@layout/list_berita" />
 </androidx.constraintlayout.widget.ConstraintLayout>

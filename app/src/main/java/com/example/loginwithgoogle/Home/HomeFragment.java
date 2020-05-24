@@ -2,7 +2,6 @@ package com.example.loginwithgoogle.Home;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,7 +12,6 @@ import android.os.Build;
 import android.os.Bundle;
 
 import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -32,17 +30,15 @@ import android.widget.Toast;
 
 import com.example.loginwithgoogle.DatabaseLocal.FavoriteDatabase;
 import com.example.loginwithgoogle.DatabaseLocal.Helper;
+import com.example.loginwithgoogle.Menu.AlQuran.AlQuran;
 import com.example.loginwithgoogle.Menu.JadwalShalat.Model.ResponeJadwal;
 import com.example.loginwithgoogle.Menu.adzan.AdzanAct;
 import com.example.loginwithgoogle.Menu.feeds.Feeds_Adapter;
 import com.example.loginwithgoogle.Menu.feeds.model.FeedsItem;
 import com.example.loginwithgoogle.Menu.feeds.model.ResponseFeeds;
-import com.example.loginwithgoogle.Menu.kiblat.Compass;
 import com.example.loginwithgoogle.Menu.kiblat.GPSTracker;
 import com.example.loginwithgoogle.Menu.kiblat.KiblatAct;
 import com.example.loginwithgoogle.Menu.news.NewsAct;
-import com.example.loginwithgoogle.Menu.news.model.BeritaItem;
-import com.example.loginwithgoogle.Menu.news.model.ResponseBerita;
 import com.example.loginwithgoogle.Network.ApiEndPoint;
 import com.example.loginwithgoogle.Network.ApiService;
 import com.example.loginwithgoogle.NetworkPublic.ApiServicePublic;
@@ -66,7 +62,7 @@ import retrofit2.Retrofit;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
     private static final String TAG = "HomeFragment";
-    RelativeLayout kiblatAct, newsAct,adzan_menu;
+    RelativeLayout kiblatAct, newsAct,adzan_menu,quran_menu;
     RecyclerView rv_feed;
     List<FeedsItem> feeds=new ArrayList<>();
     TextView tv_city, tv_waktu_shalat;
@@ -89,6 +85,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         kiblatAct = view.findViewById(R.id.kiblatAct);
         adzan_menu = view.findViewById(R.id.adzan_menu);
         newsAct = view.findViewById(R.id.newsAct);
+        quran_menu=view.findViewById(R.id.quran_menu);
         rv_feed = view.findViewById(R.id.rv_feed);
         tv_city = view.findViewById(R.id.tv_city);
         setupCompass();
@@ -104,6 +101,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         kiblatAct.setOnClickListener(this);
         newsAct.setOnClickListener(this);
         adzan_menu.setOnClickListener(this);
+        quran_menu.setOnClickListener(this);
         prefs= getActivity().getSharedPreferences("",Context.MODE_PRIVATE);
         return view;
     }
@@ -123,6 +121,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 Intent adzanAct=new Intent(getActivity(), AdzanAct.class);
                 startActivity(adzanAct);
                 break;
+            case R.id.quran_menu:
+                Intent quran_menu=new Intent(getActivity(), AlQuran.class);
+                startActivity(quran_menu);
+                break;
         }
     }
 
@@ -134,7 +136,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onResponse(Call<ResponseFeeds> call, Response<ResponseFeeds> response) {
                 boolean status = response.body().isStatus();
-                List<FeedsItem> feedsItems = response.body().getBerita();
+                List<FeedsItem> feedsItems
+                        = response.body().getBerita();
                 if (status) {
                     new  Handler().postDelayed(new Runnable() {
                         @Override

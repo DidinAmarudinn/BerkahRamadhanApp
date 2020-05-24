@@ -15,7 +15,7 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bn_main"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_45sdp"
+        android:layout_height="?attr/actionBarSize"
         android:layout_alignParentBottom="true"
         android:background="#FFFF"
         app:itemIconTint="@drawable/state_bnve"

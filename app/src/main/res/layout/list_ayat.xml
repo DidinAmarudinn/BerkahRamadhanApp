@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginRight="@dimen/_6sdp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/_6sdp">
+
+            <RelativeLayout
+                android:layout_gravity="center"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:background="@drawable/shape">
+
+                <TextView
+                    android:id="@+id/number_ayat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/textBlack"
+                    android:fontFamily="@font/opensanssemibold"
+                    android:textSize="@dimen/_10sdp"
+                    tools:text="321" />
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_marginLeft="@dimen/_6sdp"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:gravity="right"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ayat"
+                    android:id="@+id/tv_arab"
+                    android:textSize="@dimen/_16sdp"
+                    android:textColor="@color/textBlack"
+                    android:fontFamily="@font/amiri_reg"
+                    />
+                <TextView
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_latin"
+                    android:text="Arti"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/opensanslight"
+                    android:textColor="@color/textBlack"
+                    />
+                <TextView
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_artinya"
+                    android:text="Arti"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/opensanslight"
+                    android:textColor="@color/textBlack"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
